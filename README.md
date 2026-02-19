@@ -1,6 +1,7 @@
 # AutoClick
 
 A configurable Python autoclicker with both a basic desktop GUI and a CLI hotkey mode.
+The repo also includes a standalone macro recorder app.
 
 ## Features
 
@@ -61,6 +62,12 @@ CLI default hotkeys:
 - Toggle clicking: `<f8>`
 - Quit app: `<esc>`
 
+Run macro recorder:
+
+```bash
+python Macros.py
+```
+
 ## GUI Overview
 
 The GUI includes controls for:
@@ -81,6 +88,38 @@ Buttons:
 - `Apply Settings`: rebuilds the worker using current form values and rebinds global hotkeys
 - `Start / Pause`: toggles clicking with color/state feedback and hotkey label
 - `Quit`: stops the worker and closes the app
+
+## Macro Recorder (`Macros.py`)
+
+`Macros.py` is a separate GUI tool for recording and replaying macros.
+
+Main capabilities:
+
+- Records keyboard actions, mouse clicks, and mouse scroll events
+- Optional mouse movement recording
+- Live action list showing every recorded step with timestamp
+- Clear feedback for `IDLE` / `RECORDING` / `PLAYING`
+- Save and load macros as JSON
+- Optional always-on-top mode
+- Global hotkeys for record/play start and stop
+- Hotkeys are configurable in the GUI (`Macro Hotkeys` section + `Apply Hotkeys`)
+
+Default macro hotkeys:
+
+- Start recording: `F9`
+- Stop recording: `F10`
+- Start playback: `F11`
+- Stop playback: `F12`
+
+You can change these in the `Macro Hotkeys` panel (for example to `<ctrl>+<alt>+r`) and click `Apply Hotkeys`.
+
+Typical workflow:
+
+1. Launch `python Macros.py`
+2. Click `Start Recording`
+3. Perform your actions in any window
+4. Click `Stop Recording`
+5. Review the action list and click `Play Macro` (or save to JSON)
 
 ## CLI Usage
 
@@ -217,6 +256,7 @@ Use this tool responsibly and only where automation is allowed. Some games, apps
 ```text
 .
 +-- AutoClicker.py
++-- Macros.py
 +-- README.md
 ```
 
